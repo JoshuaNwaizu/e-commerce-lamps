@@ -1,0 +1,451 @@
+/**=============== GOOGLE FONTS ===============**/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Montserrat:wght@400;500;600&family=Poppins:wght@400;500&family=Roboto:wght@400;500;700&display=swap');
+
+/**=============== VARAIBLE CSS ===============**/
+:root {
+    --header-height: 3.5rem;
+    /**=============== Colors ===============**/
+    /**Color mode HSL(hue, saturation, lightness) */
+    --first-color: hsl(15, 60%, 52%);
+    --first-color-alt: hsl(15, 68%, 40%);
+    --first-gradient: linear-gradient(90deg,
+            hsl(15, 68%, 42%) 0%,
+            hsl(20, 68%, 80%)100%);
+    --second-gradient: linear-gradient(90deg,
+            hsl(20, 72%, 57%) 0%,
+            hsl(20, 78%, 80%)100%);
+    --third-gradient: linear-gradient(90deg,
+            hsl(15, 70%, 40%) 0%,
+            hsl(20, 62%, 60%)100%);
+    --title-color: hsl(0, 0%, 12%);
+    --text-color: hsl(0, 0%, 50%);
+    --white-color: #fff;
+    --body-color: hsl(0, 0%, 96%);
+    --container-color: hsl(0, 0%, 100%);
+    --box-shadow: 0 2px 16px hsla(0, 0%, 0%, .1);
+
+    /**=============== Font and typography ===============**/
+    /** .5rem = 8px | 1rem = 16px .... */
+    --body-font: 'Poppins', sans-serif;
+    --second-font: 'Montserrat', sans-serif;
+    --bigger-font-size: 2.25rem;
+    --big-font-size: 1.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .94rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*=============== Margins bottom ===============*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75ren;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*=============== Font weight ===============*/
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+
+    /*=============== z - index ===============*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*=============== Responsive Typography ===============*/
+@media screen and (min-width: 1152px) {
+    :root {
+        --bigger-font-size: 4rem;
+        --big-font-size: 3.5rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-big-font-size: 1.125rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-weight-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== Reusable Css Classes ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: var(--mb-1-5);
+}
+
+.section {
+    padding-block: 5rem 1rem;
+}
+
+.section__title {
+    font-size: var(--big-font-size);
+    margin-bottom: var(--mb-1-5);
+    text-align: center;
+}
+
+.main {
+    overflow: hidden;
+    /**For animation scrollreveal */
+}
+
+/*=============== HEADER AND NAV ===============*/
+.header {
+    position: fixed;
+    ;
+    width: 100%;
+    background-color: hsl(0, 0%, 8%);
+    left: 0;
+    top: 0;
+    z-index: var(--z-fixed);
+    transition: background .4s;
+}
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    color: var(--white-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-weight-medium);
+    transition: color .4s;
+}
+
+.nav__logo span {
+    background: var(--third-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nav__toggle,
+.nav__close {
+    display: flex;
+    cursor: pointer;
+}
+
+.nav__toggle {
+    font-size: 1.25rem;
+    color: var(--white-color);
+    transition: color .4s;
+}
+
+/**Navigation for mobile devices */
+@media screen and (max-width: 1023px) {
+    .nav__menu {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        background-color: var(--body-color);
+        width: 100%;
+        padding-block: 4rem;
+        box-shadow: var(--box-shadow);
+        transition: .4s;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 2rem;
+    }
+
+    .nav__link {
+        color: var(--text-color);
+    }
+
+    .nav__link:hover {
+        background: var(--third-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        color: var(--title-color);
+    }
+
+}
+
+/**SHOW MENU */
+.show-menu {
+    top: 0;
+}
+/**Change background header */
+.bg-header {
+    background-color: var(--body-color);
+    box-shadow: var(--box-shadow);
+}
+.bg-header .nav__logo,
+.bg-header .nav__toggle {
+    color: var(--title-color);
+}
+
+/*=============== HOME ===============*/
+.home {
+    position: relative;
+}
+
+.home__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: hsl(0, 0%, 8%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+}
+
+.home__container {
+    position: relative;
+    padding-top: var(--mb-2-5);
+    row-gap: 3.5rem;
+}
+
+.home__content {
+    row-gap: 3rem;
+}
+
+.home__data {
+    text-align: center;
+}
+
+.home__subtitle {
+    background: var(--third-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: var(--normal-font-size);
+    margin-bottom: .5rem;
+}
+
+.home__title {
+    color: var(--white-color);
+    font-size: var(--big-font-size);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--mb-1-5);
+}
+
+.home__buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+}
+.home__buttons .button {
+    box-shadow: var(--box-shadow);
+}
+.home__buttons .button__link {
+    color: var(--text-color);
+}
+.home__buttons .button__link i {
+    font-size: 2rem;
+}
+
+.home__info {
+    display: flex;
+    justify-content: center;
+    column-gap: 2rem;
+    text-align: center;
+}
+
+.home__info-title {
+    color: var(--white-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-weight-medium);
+}
+
+.home__info-title span {
+    color: var(--first-color);
+}
+
+.home__info-subtitle {
+    font-size: var(--small-font-size);
+}
+
+.home__blob {
+    width: 250px;
+    height: 320px;
+    border: 6px solid transparent;
+    background: var(--first-gradient) padding-box,
+        linear-gradient(90deg,
+            hsl(15, 68%, 50%)0%,
+            hsl(20, 68%, 80%)100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+    overflow: hidden;
+}
+.home__image {
+    position: relative;
+    justify-self: center;
+}
+.home__shadow {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    background: var(--second-gradient);
+    bottom: -.75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+.home__img {
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+    transform: translateY(-2.8rem);
+}
+.home__blob-title {
+    text-align: center;
+    margin-top: -7.5rem;
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-medium);
+    color: #ffffff7d;
+    letter-spacing: 2px;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+    display: inline-block;
+    background: var(--third-gradient);
+    padding: .75rem 1.8rem;
+    border-radius: 4rem;
+    color: var(--white-color);
+}
+.button,
+.button__link {
+    font-weight: var(--font-weight-medium);
+}
+.button__link {
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+}
+
+/*=============== POPULAR ===============*/
+.popular__data {
+    text-align: center;
+}
+.popular__content {
+    padding-block: 2.5rem 5rem;
+}
+.popular__card {
+    position: relative;
+    width: 200px;
+    height: 322px;
+    background-color: var(--container-color);
+    border-radius: 9rem 9rem 0 0;
+    padding: .75rem .75rem 1rem;
+    margin-inline: 1rem;
+    transition: box-shadow .3s;
+}
+.popular__card:hover {
+    box-shadow: var(--box-shadow);
+}
+.popular__blob {
+    background-color: var(--body-color);
+    height: 200px;
+    border-radius: 9rem 8rem 0 0;
+}
+.popular__img {
+    display: block;
+    height: 160px;
+    margin: 0 auto;
+}
+.popular__name {
+    font-size: var(--normal-font-size);
+    margin-bottom: 0.25rem;
+}
+.popular__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    font-family: var(--second-font);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--mb-1);
+}
+.popular__price {
+    font-size: var(--h1-font-size);
+}
+.popular__price span {
+    color: var(--first-color);
+}
+.popular__button {
+    display: inline-flex;
+    padding: .28rem;
+    background: var(--third-gradient);
+    border-radius: .5rem;
+    font-size: 1.15rem;
+    color: var(--white-color);
+    box-shadow: 0 2px 8px hsla(15, 68%, 32%, .4);
+    position: absolute;
+    right: .75rem;
+    bottom: 1rem;
+    cursor: pointer;
+}
