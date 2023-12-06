@@ -44,14 +44,40 @@ function scrollHeader() {
 window.addEventListener('scroll', scrollHeader)
 // SWIPER POPULAR SECTION 
 const popularSwiper = new Swiper('.popular__content', {
-  // Optional parameters
-  slidesPerView: 'auto',
-  centeredSlides: true,
-  loop: true,
+    // Optional parameters
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    loop: true,
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        768: {
+            centeredSlides: false,
+        }
+    }
 });
+//CHOOSE FAQ
+const faqItems = document.querySelectorAll('.choose__faq-item')
+//selecting each item
+faqItems.forEach((item) => {
+    const faqHeader = item.querySelector('.choose__faq-header')
+    //selecting each button click
+    faqHeader.addEventListener('click', () => {
+        displayItems(item)
+    })
+})
+const displayItems = (item) => {
+    const faqContent = item.querySelector('.choose__faq-content')
+
+    if(item.classList.contains('faq-open')) {
+        faqContent.removeAttribute('style')
+        item.classList.remove('faq-open')
+    } else 
+    //adding max height to the content and add the faq open class
+    faqContent.style.height = faqContent.scrollHeight + 'px'
+    item.classList.add('faq-open')
+}
