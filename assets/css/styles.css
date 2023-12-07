@@ -588,14 +588,127 @@ img {
 }
 
 .choose__faq-icon i {
-    transition: transform .3s;
+    transition: transform .2s;
 }
 
 .choose__faq-description {
     padding: .5rem 1rem 0 2.5rem;
 }
+
 .choose__faq-content {
     overflow: hidden;
     height: 0;
     transition: height .3s;
+}
+
+/**Rotate Faq + Icon */
+.faq-open .choose__faq-icon {
+    background: var(--white-color);
+    color: var(--first-color);
+}
+
+.faq-open .choose__faq-icon i {
+    transform: rotate(45deg);
+}
+
+/**title color change */
+.faq-open .choose__faq-title {
+    background: var(--third-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/*=============== FEATURES ===============*/
+.features__container {
+    row-gap: 3rem;
+}
+
+.features__blob {
+    width: 220px;
+    height: 320px;
+    border: 6px solid transparent;
+    background: var(--first-gradient) padding-box,
+        linear-gradient(90deg,
+            hsl(15, 72%, 65%)0%,
+            hsl(20, 78%, 80%)100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+}
+
+.features__image {
+    position: relative;
+    justify-self: center;
+}
+
+.features__shadow {
+    position: relative;
+    width: 170px;
+    height: 30px;
+    background: var(--first-gradient);
+    bottom: .75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.features__img {
+    position: relative;
+    display: block;
+    height: 220px;
+    margin: 0 auto;
+    transform: translateY(-6px);
+    z-index: 2;
+}
+
+.features__blob-title {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    color: hsla(0, 0%, 100%, .3);
+    font-weight: var(--font-weight-medium);
+    writing-mode: vertical-lr;
+    position: absolute;
+    right: .5rem;
+    bottom: 3.9rem;
+}
+
+.features__data {
+    text-align: center;
+}
+
+.features__content,
+.features__info {
+    display: grid;
+}
+
+.features__content {
+    row-gap: 2rem;
+}
+
+.features__info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.features__info-card {
+    background: linear-gradient(180deg,
+            hsla(0, 0, 86%, 0),
+            hsla(0, 0, 100%, 1));
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow .4s;
+}
+.features__info-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-weight-medium);
+}
+.features__info-card:hover {
+    box-shadow: 0 12px 16px hsla(0, 0%, 0%, .1);
+}
+.features__info-card:hover .features__info-title {
+    background: var(--third-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

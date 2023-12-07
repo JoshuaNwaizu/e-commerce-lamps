@@ -62,22 +62,31 @@ const popularSwiper = new Swiper('.popular__content', {
 });
 //CHOOSE FAQ
 const faqItems = document.querySelectorAll('.choose__faq-item')
-//selecting each item
+//1. selecting each item
 faqItems.forEach((item) => {
     const faqHeader = item.querySelector('.choose__faq-header')
-    //selecting each button click
+    // 2 selecting each button click
     faqHeader.addEventListener('click', () => {
+        //select the faq-open class
+        const openItem = document.querySelector('.faq-open')
+
         displayItems(item)
+        //removing the other opened classes when one is opened
+        if (openItem && openItem != item) {
+            displayItems(openItem)
+        }
     })
 })
+//3. creating the function to display the content
 const displayItems = (item) => {
     const faqContent = item.querySelector('.choose__faq-content')
 
-    if(item.classList.contains('faq-open')) {
+    if (item.classList.contains('faq-open')) {
         faqContent.removeAttribute('style')
         item.classList.remove('faq-open')
-    } else 
-    //adding max height to the content and add the faq open class
-    faqContent.style.height = faqContent.scrollHeight + 'px'
-    item.classList.add('faq-open')
+    } else {
+        //4. adding max height to the content and add the faq-open class
+        faqContent.style.height = faqContent.scrollHeight + 'px'
+        item.classList.add('faq-open')
+    }
 }
