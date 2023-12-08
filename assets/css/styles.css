@@ -702,31 +702,38 @@ img {
     text-align: center;
     transition: box-shadow .4s;
 }
+
 .features__info-title {
     font-size: var(--h3-font-size);
     font-weight: var(--font-weight-medium);
 }
+
 .features__info-card:hover {
     box-shadow: 0 12px 16px hsla(0, 0%, 0%, .1);
 }
+
 .features__info-card:hover .features__info-title {
     background: var(--third-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
+
 /*=============== PRODUCTS ===============*/
 .products__container {
     justify-self: center;
     row-gap: 3rem;
 }
+
 .products__data {
     text-align: center;
 }
+
 .products__content {
     justify-self: center;
     gap: 2rem;
 }
+
 .products__card {
     position: relative;
     width: 200px;
@@ -788,4 +795,185 @@ img {
     right: .75rem;
     bottom: 1rem;
     cursor: pointer;
+}
+
+/*<!--=============== JOIN ===============-->*/
+.join__container {
+    padding-top: 2.5rem;
+}
+
+.join__bg {
+    row-gap: 0;
+    background-color: var(--container-color);
+    padding: 0 1.5rem 3.5rem 1.5rem;
+}
+
+.join__blob {
+    position: relative;
+    height: 320px;
+    width: 220px;
+    border: 6px solid transparent;
+    background: var(--first-gradient) padding-box,
+        linear-gradient(90deg,
+            hsl(15, 72%, 65%)0%,
+            hsl(20, 78%, 80%)100%) border-box;
+    border-radius: 20rem 20rem 0 0;
+    z-index: 2;
+}
+
+.join__image {
+    position: relative;
+    justify-self: center;
+    transform: translateY(-3.5rem);
+}
+
+.join__shadow {
+    position: relative;
+    width: 170px;
+    height: 30px;
+    background: var(--first-gradient);
+    bottom: .75rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.join__img {
+    display: block;
+    width: 190px;
+    margin: 0 auto;
+}
+
+.join__blob-title {
+    text-align: center;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-medium);
+    position: relative;
+    top: -2rem;
+    color: hsla(0, 0%, 100%, .3);
+}
+
+.join__content {
+    row-gap: 2rem;
+}
+
+.join__data {
+    text-align: center;
+}
+
+.join__form {
+    display: grid;
+    row-gap: .75rem;
+}
+
+.join__input {
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 1.25rem 1.5rem;
+    border-radius: 4rem;
+    color: var(--text-color);
+}
+
+.join__input::placeholder {
+    font-family: var(--second-font);
+}
+
+.join__button {
+    padding-block: 1.1rem;
+    cursor: pointer;
+}
+
+/*<!--=============== FOOTER ===============-->*/
+.footer {
+    padding-block: 3rem 2.5rem;
+}
+
+.footer__content {
+    row-gap: 3rem;
+}
+
+.footer__logo {
+    display: inline-block;
+    color: var(--title-color);
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
+    margin-bottom: .75rem;
+}
+
+.footer__logo span {
+    background: var(--third-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.footer__data {
+    grid-template-columns: repeat(2, max-content);
+    gap: 2.5rem 4rem;
+}
+
+.footer__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 1rem;
+}
+
+.footer__links {
+    display: grid;
+    row-gap: .75rem;
+}
+
+.footer__link {
+    color: var(--text-color);
+}
+.footer__link span {
+    background: var(--third-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.footer__link:hover {
+    color: var(--title-color);
+}
+
+.footer__social,
+.footer__group,
+.footer__terms {
+    display: flex;
+}
+.footer__social {
+    column-gap: 1.25rem;
+}
+.footer__social-link {
+    font-size: 1.25rem;
+    background: var(--third-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: transform .3s;
+}
+
+.footer__social-link:hover {
+    transform: translateY(-.35rem);
+}
+.footer__group {
+    margin-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+.footer__terms {
+    column-gap: 1.5rem;
+}
+.footer__terms a {
+    font-size: var(--small-font-size);
+    color: var(--text-color);
+}
+.footer__copy {
+    font-size: var(--small-font-size);
+    text-align: center;
 }

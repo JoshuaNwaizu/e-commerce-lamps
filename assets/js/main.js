@@ -27,6 +27,13 @@ if (navClose) {
         navMenu.classList.remove('show-menu')
     })
 }
+//If nav menu is opened, it should close when the scroll is greater or equal to 50
+function scrollNav() {
+    if (this.scrollY >= 50) {
+     navMenu.classList.remove('show-menu');
+    }
+}
+window.addEventListener('scroll', scrollNav)
 // REMOVE MENU MOBILE
 const navLink = document.querySelectorAll('.nav__link')
 
@@ -40,6 +47,7 @@ function scrollHeader() {
     const header = document.getElementById('header')
     // When the scroll is greater than 50 viewport height, add the bg-header class to the header tag
     if (this.scrollY >= 50) header.classList.add('bg-header'); else header.classList.remove('bg-header')
+
 }
 window.addEventListener('scroll', scrollHeader)
 // SWIPER POPULAR SECTION 
