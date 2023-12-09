@@ -736,7 +736,7 @@ img {
 
 .products__card {
     position: relative;
-    width: 200px;
+    width: 250px;
     height: 322px;
     background-color: var(--container-color);
     border-radius: 9rem 9rem 0 0;
@@ -913,6 +913,7 @@ img {
 .footer__data {
     grid-template-columns: repeat(2, max-content);
     gap: 2.5rem 4rem;
+    justify-self: center;
 }
 
 .footer__title {
