@@ -250,6 +250,15 @@ img {
     color: var(--title-color);
 }
 
+/**Active Link */
+.active-link {
+    background: var(--third-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
 /*=============== HOME ===============*/
 .home {
     position: relative;
@@ -430,6 +439,10 @@ img {
     border-radius: 9rem 8rem 0 0;
 }
 
+.popular__name-sub {
+    margin-top: .5rem;
+}
+
 .popular__img {
     display: block;
     height: 160px;
@@ -499,7 +512,7 @@ img {
     right: 6rem;
 }
 
-/*=============== POPULAR ===============*/
+/*=============== CHOOSE ===============*/
 .choose__container {
     row-gap: 2rem;
 }
@@ -605,11 +618,11 @@ img {
 .faq-open .choose__faq-icon {
     background: var(--white-color);
     color: var(--first-color);
-    transition: .3s;
+    transition: .4s;
 }
 
 .faq-open .choose__faq-icon i {
-    transform: rotate(135deg);
+    transform: rotate(180deg);
 }
 
 
@@ -930,6 +943,7 @@ img {
 .footer__link {
     color: var(--text-color);
 }
+
 .footer__link span {
     background: var(--third-gradient);
     background-clip: text;
@@ -946,9 +960,11 @@ img {
 .footer__terms {
     display: flex;
 }
+
 .footer__social {
     column-gap: 1.25rem;
 }
+
 .footer__social-link {
     font-size: 1.25rem;
     background: var(--third-gradient);
@@ -961,20 +977,66 @@ img {
 .footer__social-link:hover {
     transform: translateY(-.35rem);
 }
+
 .footer__group {
     margin-top: 4rem;
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
 }
+
 .footer__terms {
     column-gap: 1.5rem;
 }
+
 .footer__terms a {
     font-size: var(--small-font-size);
     color: var(--text-color);
 }
+
 .footer__copy {
     font-size: var(--small-font-size);
     text-align: center;
+}
+
+/*<!--=============== SCROLLBAR ===============-->*/
+
+::-webkit-scrollbar {
+    width: .6rem;
+    background: hsl(0, 0%, 74%);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--first-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hoveractive-link {
+    background: var(--third-gradient);
+}
+
+/*<!--=============== SCROLL UP ===============-->*/
+.scroll__up {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background: var(--container-color);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    z-index: var(--z-tooltip);
+    border-radius: .25rem;
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, .1);
+    transition: bottom .4s;
+}
+
+.scroll__up:hover {
+    transform: translateY(-.5rem);
+    transition: .3s;
+}
+
+.show-scroll {
+    bottom: 3rem;
 }
