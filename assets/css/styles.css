@@ -92,6 +92,7 @@ body {
 body {
     background-color: var(--body-color);
     color: var(--text-color);
+    transition: .3s;
 }
 
 input,
@@ -120,6 +121,70 @@ a {
 img {
     max-width: 100%;
     height: auto;
+}
+
+/*=============== THEME ===============*/
+.nav__buttons {
+    display: flex;
+    align-items: center;
+    position: relative;
+    column-gap: 1rem;
+    z-index: 0;
+}
+
+.change-theme {
+    font-size: 1.25rem;
+    color: var(--white-color);
+    cursor: pointer;
+    transition: color .4s;
+}
+
+/*=============== VARIABLE DARK THEME ===============*/
+body.dark-theme {
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 70%);
+    --body-color: hsl(0, 0%, 12%);
+    --container-color: hsl(0, 0%, 15%);
+    --box-shadow: 0 1px 11px hsla(0, 0%, 60%);
+}
+
+/**Other changes in the dark theme */
+.dark-theme .bg-header,
+.dark-theme .nav__menu {
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, .2);
+}
+
+.dark-theme .home__shadow,
+.dark-theme .choose__shadow,
+.dark-theme .features__shadow,
+.dark-theme .join__shadow
+{
+    background: hsl(15, 60%, 52%, .4);
+}
+
+.dark-theme .popular__card:hover,
+.dark-theme .products__card:hover {
+    box-shadow: 0 2px 16px hsla(0, 0%, 0%, .2);
+}
+
+.dark-theme .popular__button,
+.dark-theme .choose__faq-icon .dark-theme .products__button {
+    box-shadow: 0 12px 8px hsla(15, 80%, 50%, .5);
+}
+
+.dark-theme .swiper-button-next,
+.dark-theme .swiper-button-prev {
+    box-shadow: 0 12px 8px hsla(0, 0%, 0%, .2);
+}
+
+.dark-theme .features__info-card {
+    background: linear-gradient(100deg,
+            hsla(0, 0%, 15%, 0),
+            hsla(0, 0%, 15%));
+}
+
+.dark-theme .scroll__up {
+    box-shadow: 0 4px 16px hsla(0, 0%, 0%, .25);
 }
 
 /*=============== Reusable Css Classes ===============*/
@@ -204,6 +269,7 @@ img {
         padding-block: 4rem;
         box-shadow: var(--box-shadow);
         transition: .4s;
+        z-index: 1;
     }
 
     .nav__list {
@@ -246,7 +312,8 @@ img {
 }
 
 .bg-header .nav__logo,
-.bg-header .nav__toggle {
+.bg-header .nav__toggle,
+.bg-header .change-theme {
     color: var(--title-color);
 }
 
@@ -426,7 +493,7 @@ img {
     border-radius: 9rem 9rem 0 0;
     padding: .75rem .75rem 1rem;
     margin-inline: 1rem;
-    transition: box-shadow .3s;
+    transition: box-shadow .3s, background .3s;
 }
 
 .popular__card:hover {
@@ -437,6 +504,8 @@ img {
     background-color: var(--body-color);
     height: 200px;
     border-radius: 9rem 8rem 0 0;
+    transition: background .3s;
+
 }
 
 .popular__name-sub {
@@ -502,6 +571,8 @@ img {
     border-radius: 50%;
     color: var(--first-color);
     box-shadow: var(--box-shadow);
+    transition: background .3s;
+
 }
 
 .swiper-button-prev {
@@ -526,6 +597,8 @@ img {
             hsl(15, 72%, 65%)0%,
             hsl(20, 78%, 80%)100%) border-box;
     border-radius: 20rem 20rem 0 0;
+    transition: background .3s;
+
 }
 
 .choose__image {
@@ -709,8 +782,8 @@ img {
 
 .features__info-card {
     background: linear-gradient(180deg,
-            hsla(0, 0, 86%, 0),
-            hsla(0, 0, 100%, 1));
+            hsla(0, 0%, 86%, 0),
+            hsla(0, 0%, 100%, 1));
     padding: 2rem 1.5rem;
     text-align: center;
     transition: box-shadow .4s;
@@ -755,7 +828,7 @@ img {
     border-radius: 9rem 9rem 0 0;
     padding: .75rem .75rem 1rem;
     margin-inline: 1rem;
-    transition: box-shadow .3s;
+    transition: box-shadow .3s, background .3s;
 }
 
 .products__card:hover {
@@ -766,6 +839,8 @@ img {
     background-color: var(--body-color);
     height: 200px;
     border-radius: 9rem 8rem 0 0;
+    transition:  background .3s ;
+
 }
 
 .products__img {
@@ -819,6 +894,8 @@ img {
     row-gap: 0;
     background-color: var(--container-color);
     padding: 0 1.5rem 3.5rem 1.5rem;
+    transition:  background .3s ;
+
 }
 
 .join__blob {
@@ -888,6 +965,8 @@ img {
     padding: 1.25rem 1.5rem;
     border-radius: 4rem;
     color: var(--text-color);
+    transition:  background .4s ;
+
 }
 
 .join__input::placeholder {
@@ -1029,7 +1108,8 @@ img {
     z-index: var(--z-tooltip);
     border-radius: .25rem;
     box-shadow: 0 4px 16px hsla(0, 0%, 0%, .1);
-    transition: bottom .4s;
+    transition: bottom .4s, transform .4s, background .4s;
+    
 }
 
 .scroll__up:hover {
@@ -1040,3 +1120,4 @@ img {
 .show-scroll {
     bottom: 3rem;
 }
+/*<!--=============== BREAK POINTS ===============-->*/
