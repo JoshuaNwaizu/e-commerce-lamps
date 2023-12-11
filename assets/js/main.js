@@ -164,9 +164,9 @@ themeButton.addEventListener('click', () => {
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: 2500,
-    delay: 400,
-    //reset: true // animation repeat
+    duration: 1200,
+    delay: 200,
+    reset: true // animation repeat
 })
 
 sr.reveal(`.home__content, .popular__container, .products__container, .join__bg, .footer__container`)
