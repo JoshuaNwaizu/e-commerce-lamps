@@ -1252,6 +1252,7 @@ body.dark-theme {
     .join__input {
         padding: 1rem 0;
     }
+    
 
     .footer__data {
         grid-template-columns: repeat(3, max-content);

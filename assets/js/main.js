@@ -100,6 +100,7 @@ const displayItems = (item) => {
         item.classList.add('faq-open')
     }
 }
+
 /*SHOW SCROLL UP*/
 function scrollUp() {
     const scrollUp = document.getElementById('scroll-up');
